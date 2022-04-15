@@ -40,8 +40,8 @@ public class AlbumController {
 
     @PutMapping(value = "/{name}", produces = "application/json")
     public Mono<Album> update(@PathVariable("name") String name, @RequestBody Album album) {
-        albumRepository.save(album);
-        return Mono.just(album);
+//        albumRepository.save(album);
+        return (albumRepository.save(album));
     }
 
     @DeleteMapping(value = "/{name}")
